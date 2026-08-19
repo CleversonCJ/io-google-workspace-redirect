@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<info>
+	<id>io-google-workspace-redirect</id>
+	<name>IO Google Workspace Redirect</name>
+	<summary>Open Google Docs, Sheets, and Slides pointer files from Nextcloud</summary>
+	<description><![CDATA[
+Reads .gdoc, .gsheet, and .gslides JSON pointer files and opens the original
+Google Workspace document. No Google credentials or Nextcloud passwords are stored.
+	]]></description>
+	<version>1.0.0</version>
+	<licence>MIT</licence>
+	<author homepage="https://iomarketing.com.br">IO Marketing</author>
+	<namespace>IOGoogleWorkspaceRedirect</namespace>
+	<category>files</category>
+	<category>office</category>
+	<website>https://github.com/CleversonCJ/io-google-workspace-redirect</website>
+	<bugs>https://github.com/CleversonCJ/io-google-workspace-redirect/issues</bugs>
+	<repository type="git">https://github.com/CleversonCJ/io-google-workspace-redirect</repository>
+	<dependencies>
+		<nextcloud min-version="33" max-version="35"/>
+	</dependencies>
+	<external-app>
+		<docker-install>
+			<registry>ghcr.io</registry>
+			<image>cleversoncj/io-google-workspace-redirect</image>
+			<image-tag>1.0.0</image-tag>
+		</docker-install>
+		<routes>
+			<route>
+				<url>^/open$</url>
+				<verb>POST</verb>
+				<access_level>USER</access_level>
+			</route>
+			<route>
+				<url>^/js/redirect\.js$</url>
+				<verb>GET</verb>
+				<access_level>USER</access_level>
+			</route>
+			<route>
+				<url>^/img/icon\.svg$</url>
+				<verb>GET</verb>
+				<access_level>USER</access_level>
+			</route>
+		</routes>
+	</external-app>
+</info>
